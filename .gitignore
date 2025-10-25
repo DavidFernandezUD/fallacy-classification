@@ -1,0 +1,9 @@
+
+*.vscode
+*.swp
+*.tmp
+*.o
+
+*venv
+/venv
+/models/*
