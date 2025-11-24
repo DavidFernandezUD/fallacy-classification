@@ -1,0 +1,3 @@
+accuracy,precision_macro,recall_macro,f1_macro,model,representation,best_params
+0.4275,0.4635822687353596,0.41276536212005,0.41692944369388657,LogisticRegression,BoW,{'C': 10.0}
+0.455,0.48456232835265084,0.4309752986220455,0.4366230793019818,LinearSVC,TF-IDF,{'C': 1.0}
