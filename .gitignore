@@ -1,9 +1,63 @@
+# Ignore Python virtual environments
+.venv/
+venv/
+env/
+ENV/
 
-*.vscode
-*.swp
-*.tmp
-*.o
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-*venv
-/venv
-/models/*
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IPython history
+profile_default/
+ipython_config.py
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and local data
+*.log
+
+# Notebook outputs and results
+experiments/results_*.csv
+*.csv
+
+# Models and large binary data (do not keep large pretrained files in git)
+models/*.bin*
+models/*.vec*
+models/*.model
+models/*.gz
+
+# Checkpoints, weights, and other heavy artifacts
+*.h5
+*.ckpt
+
+# Misc
+*.pyc
+
