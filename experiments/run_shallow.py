@@ -54,8 +54,8 @@ def main():
     # Hacer búsqueda sencilla de la fuerza de regularización C
     grid = GridSearchCV(lr, {"C": [0.1, 1.0, 10.0]}, cv=3, n_jobs=1)
     grid.fit(X_train_bow, y_train)
-    pred = grid.predict(X_dev_bow)
-    metrics = evaluate_classification(y_dev, pred)
+    pred = grid.predict(X_test_bow)
+    metrics = evaluate_classification(y_test, pred)
     # Apuntar el modelo, la representación y los mejores parámetros
     metrics.update({"model": "LogisticRegression", "representation": "BoW", "best_params": str(grid.best_params_)})
     results.append(metrics)
@@ -66,16 +66,16 @@ def main():
     svc = LinearSVC(max_iter=5000)
     grid2 = GridSearchCV(svc, {"C": [0.1, 1.0, 10.0]}, cv=3, n_jobs=1)
     grid2.fit(X_train_tfidf, y_train)
-    pred2 = grid2.predict(X_dev_tfidf)
-    metrics2 = evaluate_classification(y_dev, pred2)
+    pred2 = grid2.predict(X_test_tfidf)
+    metrics2 = evaluate_classification(y_test, pred2)
     metrics2.update({"model": "LinearSVC", "representation": "TF-IDF", "best_params": str(grid2.best_params_)})
     results.append(metrics2)
     print(metrics2)
 
     # Guardar los resultados en un CSV para poder revisarlos después
     df = pd.DataFrame(results)
-    df.to_csv("experiments/results_shallow_dev.csv", index=False)
-    print("Guardado results_shallow_dev.csv en la carpeta experiments")
+    df.to_csv("experiments/results_shallow_test.csv", index=False)
+    print("Guardado results_shallow_test.csv en la carpeta experiments")
 
 
 if __name__ == '__main__':
