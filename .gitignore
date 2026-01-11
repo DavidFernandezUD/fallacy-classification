@@ -53,6 +53,7 @@ models/*.bin*
 models/*.vec*
 models/*.model
 models/*.gz
+models/
 
 # Checkpoints, weights, and other heavy artifacts
 *.h5
